@@ -1,0 +1,5 @@
+# Download Dataset and instructions
+descargar desde https://drive.google.com/file/d/17AD9Hhw4kEoe3ORcJKGf9MfJIGHleBav/view?usp=sharing
+Place file with datasets in your google drive and discompress the file.
+The selected datset for the noteboook is called: *reviews_CDs_and_Vinyl_5.json.gz* (you only need that file in your Drive for the notebook to work.
+Change the working_path, at the begining of the notebook, accordingly to your file's location in the Drive.
