@@ -1,39 +1,43 @@
 # 📝 NLP Model for Sentiment Analysis
 
-Este repositorio contiene un proyecto de Procesamiento de Lenguaje Natural (NLP) desarrollado como parte de una asignatura. El objetivo fue entrenar un modelo capaz de detectar **reseñas negativas** a partir de un conjunto de opiniones de clientes.
+This repository contains a Natural Language Processing (NLP) project developed as part of a course. The goal was to train a model capable of detecting **negative reviews** from a set of customer opinions.
+
+## 📋 Instructions to run the notebook
+Refer to instruccions in [Download_dataset.txt](./NLP/Dataset/Download_dataset.txt) and follow instructions to get the Dataset
+To simplify the execution of the notebook, it is recommended to make a copy in your google drive and execcute it from there.
 
 ## 📌 Project Overview
 
-- **Objetivo**: Clasificar las reseñas de clientes como negativas o no.
-- **Reto**: El conjunto de datos tenía **clases desbalanceadas**, con menos reseñas negativas que positivas.
-- **Enfoque**: Comparar el rendimiento de diferentes modelos y técnicas de preprocesamiento ante este desequilibrio.
+- **Objective**: Classify customer reviews as negative or not.
+- **Challenge**: The dataset had **imbalanced classes**, with fewer negative reviews than positive ones.
+- **Approach**: Compare the performance of different models and preprocessing techniques against this imbalance.
 
 ## ⚙️ Methods and Tools
 
-- Modelos utilizados: `Logistic Regression`, `Random Forest`
-- Técnicas aplicadas:
-  - Uso del parámetro `class_weight='balanced'` para tratar el desbalanceo
-  - Eliminación de palabras vacías estándar (se mantuvieron negaciones como _not_, _no_, _didn't_)
-  - Evaluación de los modelos con foco en la detección de **reseñas negativas**
+- Models used: `Logistic Regression`, `Random Forest`
+- Applied techniques:
+  - Use of the `class_weight='balanced'` parameter to address class imbalance
+  - Removal of standard stop words (while keeping negations like _not_, _no_, _didn't_)
+  - Model evaluation focused on detecting **negative reviews**
 
 ## 📊 Key Conclusions
 
-- ✅ **Manejo del desbalanceo**:  
-  Es más efectivo usar la opción `class_weight='balanced'` dentro de los modelos que aplicar técnicas de muestreo manualmente.
+- ✅ **Handling imbalance**:  
+  Using the `class_weight='balanced'` option within models is more effective than manually applying sampling techniques.
 
 - 🧹 **Stop words**:  
-  Eliminar palabras vacías personalizadas (como _not_, _no_, _didn't_) **no mejoró** los resultados. Solo se eliminaron las stop words estándar.
+  Removing custom stop words (like _not_, _no_, _didn't_) **did not improve** results. Only standard stop words were removed.
 
-- ⚖️ **Rendimiento del modelo**:  
-  No existe una solución perfecta. La elección depende del objetivo del problema: minimizar **falsos negativos** o **falsos positivos** según el contexto.
+- ⚖️ **Model performance**:  
+  There's no perfect solution. The choice depends on the problem's objective: minimizing **false negatives** or **false positives** according to the context.
 
-- 🔍 **Regresión logística vs. Random Forest**:  
-  Tras entrenar ambos modelos con el dataset completo y desbalanceado utilizando `class_weight='balanced'`:
-  - La **Regresión Logística** tuvo mejores resultados en la detección de **reseñas negativas**
-  - Esto la convierte en una opción interesante para empresas que quieran identificar opiniones negativas y actuar en consecuencia.
+- 🔍 **Logistic Regression vs. Random Forest**:  
+  After training both models with the complete and imbalanced dataset using `class_weight='balanced'`:
+  - **Logistic Regression** performed better at detecting **negative reviews**
+  - This makes it an interesting option for companies wanting to identify negative opinions and take action accordingly.
 
 ## 🔮 Future Improvements
 
-- 🛠️ Aplicar **GridSearchCV** para optimizar los hiperparámetros del modelo Random Forest.
-- 🤖 Explorar enfoques de **Deep Learning**, como **BERT** u otros modelos basados en transformers, para capturar patrones más complejos en el lenguaje.
+- 🛠️ Apply **GridSearchCV** to optimize Random Forest hyperparameters.
+- 🤖 Explore **Deep Learning** approaches, such as **BERT** or other transformer-based models, to capture more complex language patterns.
 
